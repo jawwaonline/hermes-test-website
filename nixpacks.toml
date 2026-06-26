@@ -2,8 +2,11 @@
 nixpkgs = ["nodejs"]
 
 [phases.build]
-cmds = ["python3 -m http.server 3000"]
+cmds = ["npm install", "npm run build"]
+
+[phases.dev]
+cmds = ["npm install", "npm run dev"]
 
 [start]
-cmd = "python3 -m http.server 3000"
+cmd = "node server.js"
 port = 3000
